@@ -5167,8 +5167,8 @@ window.jwplayer = function(t) {
         function m(t, e) {
             var n = "file:" === window.location.protocol ? "https:" : "",
                 r = {
-                    //bidding: "8.20.10/bidding.js",
-                    jwpsrv: "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/jwpsrv.js",
+                    //bidding: "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/bidding.js",
+                    //jwpsrv: "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/jwpsrv.js",
                     // dai: "//ssl.p.jwpcdn.com/player/plugins/dai/v/0.5.3/dai.js",
                     // vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.3/vast.js",
                     // googima: e ? "//ssl.p.jwpcdn.com/player/v/8.20.10/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.8.15/googima.js",
