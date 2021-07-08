@@ -2205,7 +2205,7 @@ window.jwplayer = function(t) {
                 return ""
             },
             u = function() {
-                var t = "8.20.10/";
+                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/";
                 return ""  + t
             },
             a = function(t) {
