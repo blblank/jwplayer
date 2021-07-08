@@ -2205,8 +2205,8 @@ window.jwplayer = function(t) {
                 return ""
             },
             u = function() {
-                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/";
-                return "" + (Object(i.isFileProtocol)() ? "https:" : "") + t
+                var t = "8.20.10/";
+                return ""  + t
             },
             a = function(t) {
                 var e = ("0" + t).split(/\W/),
@@ -5165,15 +5165,16 @@ window.jwplayer = function(t) {
         }
 
         function m(t, e) {
-            var n = "file:" === window.location.protocol ? "https:" : "",
+            //var n = "file:" === window.location.protocol ? "https:" : "",
+			var n = "",
                 r = {
-                    //bidding: "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/bidding.js",
-                    //jwpsrv: "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.20.10/jwpsrv.js",
-                    // dai: "//ssl.p.jwpcdn.com/player/plugins/dai/v/0.5.3/dai.js",
-                    // vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.3/vast.js",
-                    // googima: e ? "//ssl.p.jwpcdn.com/player/v/8.20.10/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.8.15/googima.js",
-                    // freewheel: "//ssl.p.jwpcdn.com/player/plugins/freewheel/v/2.2.12/freewheel.js",
-                    // gapro: "//ssl.p.jwpcdn.com/player/plugins/gapro/v/2.1.5/gapro.js"
+                    // bidding: "8.20.10/bidding.js",
+                    //jwpsrv: "8.20.10/jwpsrv.js",
+                    // dai: "plugins/dai/v/0.5.3/dai.js",
+                    // vast: "plugins/vast/v/8.9.3/vast.js",
+                    // googima: e ? "8.20.10/googimanvmp.js" : "plugins/googima/v/8.8.15/googima.js",
+                    // freewheel: "plugins/freewheel/v/2.2.12/freewheel.js",
+                    // gapro: "plugins/gapro/v/2.1.5/gapro.js"
                 }[t];
             return r ? n + r : ""
         }
