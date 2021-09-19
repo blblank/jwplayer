@@ -1,11 +1,11 @@
 /*!
-   JW Player version 8.21.2
+   JW Player version 8.22.1
    Copyright (c) 2021, JW Player, All Rights Reserved
    This source code and its use and distribution is subject to the terms
    and conditions of the applicable license agreement.
    https://www.jwplayer.com/tos/
    This product includes portions of other software. For the full text of licenses, see
-   https://ssl.p.jwpcdn.com/player/v/8.21.2/notice.txt
+   https://ssl.p.jwpcdn.com/player/v/8.22.1/notice.txt
 */
 window.jwplayer = function(t) {
     function e(e) {
@@ -48,16 +48,17 @@ window.jwplayer = function(t) {
                         6: "jwplayer.core.controls.html5",
                         7: "jwplayer.core.controls.polyfills",
                         8: "jwplayer.core.controls.polyfills.html5",
-                        9: "polyfills.intersection-observer",
-                        10: "polyfills.webvtt",
-                        11: "provider.airplay",
-                        12: "provider.cast",
-                        13: "provider.hlsjs",
-                        14: "provider.hlsjs-alt",
-                        15: "provider.html5",
-                        16: "provider.shaka",
-                        17: "related",
-                        18: "vttparser"
+                        9: "jwplayer.stats",
+                        10: "polyfills.intersection-observer",
+                        11: "polyfills.webvtt",
+                        12: "provider.airplay",
+                        13: "provider.cast",
+                        14: "provider.hlsjs",
+                        15: "provider.hlsjs-alt",
+                        16: "provider.html5",
+                        17: "provider.shaka",
+                        18: "related",
+                        19: "vttparser"
                     }[t] || t) + ".js"
                 }(t);
                 var c = new Error;
@@ -1313,50 +1314,52 @@ window.jwplayer = function(t) {
     },
     function(t, e, n) {
         "use strict";
-        n.d(e, "i", (function() {
+        n.d(e, "j", (function() {
             return s
-        })), n.d(e, "e", (function() {
-            return l
-        })), n.d(e, "q", (function() {
-            return f
-        })), n.d(e, "j", (function() {
-            return d
-        })), n.d(e, "s", (function() {
-            return p
-        })), n.d(e, "r", (function() {
-            return v
-        })), n.d(e, "u", (function() {
-            return g
-        })), n.d(e, "d", (function() {
-            return y
-        })), n.d(e, "a", (function() {
-            return j
-        })), n.d(e, "o", (function() {
-            return w
-        })), n.d(e, "p", (function() {
-            return O
-        })), n.d(e, "v", (function() {
-            return k
-        })), n.d(e, "t", (function() {
-            return C
-        })), n.d(e, "h", (function() {
-            return P
-        })), n.d(e, "b", (function() {
-            return x
-        })), n.d(e, "g", (function() {
-            return S
-        })), n.d(e, "c", (function() {
-            return T
-        })), n.d(e, "m", (function() {
-            return E
-        })), n.d(e, "k", (function() {
-            return A
-        })), n.d(e, "n", (function() {
-            return _
-        })), n.d(e, "l", (function() {
-            return F
         })), n.d(e, "f", (function() {
+            return l
+        })), n.d(e, "r", (function() {
+            return f
+        })), n.d(e, "k", (function() {
+            return d
+        })), n.d(e, "t", (function() {
+            return p
+        })), n.d(e, "s", (function() {
+            return v
+        })), n.d(e, "v", (function() {
+            return g
+        })), n.d(e, "e", (function() {
+            return y
+        })), n.d(e, "b", (function() {
+            return j
+        })), n.d(e, "p", (function() {
+            return w
+        })), n.d(e, "q", (function() {
+            return O
+        })), n.d(e, "w", (function() {
+            return k
+        })), n.d(e, "u", (function() {
+            return C
+        })), n.d(e, "i", (function() {
+            return P
+        })), n.d(e, "c", (function() {
+            return x
+        })), n.d(e, "h", (function() {
+            return S
+        })), n.d(e, "d", (function() {
+            return T
+        })), n.d(e, "n", (function() {
+            return E
+        })), n.d(e, "l", (function() {
+            return A
+        })), n.d(e, "o", (function() {
+            return _
+        })), n.d(e, "m", (function() {
+            return F
+        })), n.d(e, "g", (function() {
             return I
+        })), n.d(e, "a", (function() {
+            return M
         }));
         var r, i = n(0),
             o = n(2),
@@ -1520,6 +1523,15 @@ window.jwplayer = function(t) {
             var t = window.screen.orientation;
             return !!t && ("landscape-primary" === t.type || "landscape-secondary" === t.type) || 90 === window.orientation || -90 === window.orientation
         }
+
+        function M(t) {
+            return function(t) {
+                var e = document.createElement("textarea");
+                return e.innerHTML = t, e.value
+            }(t).replace(/&|<|>|"|''/gm, (function(t) {
+                return "&#" + t.charCodeAt(0) + ";"
+            })).replace(/&#60;(\/?)(b|strong|i|em|p|br|ul|ol|li|h.)&#62;/gim, "<$1$2>")
+        }
     },
     function(t, e, n) {
         "use strict";
@@ -1549,7 +1561,7 @@ window.jwplayer = function(t) {
 
         function a() {
             return n.e(4).then(function(t) {
-                return n(71).default
+                return n(72).default
             }.bind(null, n)).catch(o(r.s + 101))
         }
     },
@@ -2205,10 +2217,8 @@ window.jwplayer = function(t) {
                 return ""
             },
             u = function() {
-                // var t = "//ssl.p.jwpcdn.com/player/v/8.21.2/";
-				var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.21.2/";
+                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.22.1/";
                 return "" + (Object(i.isFileProtocol)() ? "https:" : "") + t
-				return ""  + t
             },
             a = function(t) {
                 var e = ("0" + t).split(/\W/),
@@ -2399,6 +2409,42 @@ window.jwplayer = function(t) {
     },
     function(t, e, n) {
         "use strict";
+        n.d(e, "a", (function() {
+            return a
+        }));
+        var r = n(48),
+            i = n(20),
+            o = n(45),
+            u = n(1),
+            a = 100013;
+        e.b = function(t) {
+            var e, n, c;
+            try {
+                var s = Object(r.a)(t || "", Object(o.a)("NDh2aU1Cb0NHRG5hcDFRZQ==")).split("/");
+                if ("pro" === (e = s[0]) && (e = "premium"), Object(i.a)(e)("setup") || (e = "invalid"), s.length > 2) {
+                    n = s[1];
+                    var l = parseInt(s[2]);
+                    l > 0 && (c = new Date).setTime(l)
+                }
+            } catch (t) {
+                e = "invalid"
+            }
+            this.edition = function() {
+                return e
+            }, this.token = function() {
+                return n
+            }, this.expiration = function() {
+                return c
+            }, this.duration = function() {
+                return c ? c.getTime() - (new Date).getTime() : 0
+            }, this.error = function() {
+                var r;
+                return void 0 === t ? r = 100011 : "invalid" !== e && n ? this.duration() < 0 && (r = a) : r = 100012, r ? new u.q(u.k, r) : null
+            }
+        }
+    },
+    function(t, e, n) {
+        "use strict";
         var r = n(1),
             i = n(19),
             o = function() {
@@ -2452,42 +2498,6 @@ window.jwplayer = function(t) {
             return window.jwplayerPluginJsonp = f, (t.pluginLoader = t.pluginLoader || new o).load(e, l, n, t).then((function(e) {
                 if (!t.attributes._destroyed) return delete window.jwplayerPluginJsonp, e
             }))
-        }
-    },
-    function(t, e, n) {
-        "use strict";
-        n.d(e, "a", (function() {
-            return a
-        }));
-        var r = n(48),
-            i = n(20),
-            o = n(45),
-            u = n(1),
-            a = 100013;
-        e.b = function(t) {
-            var e, n, c;
-            try {
-                var s = Object(r.a)(t || "", Object(o.a)("NDh2aU1Cb0NHRG5hcDFRZQ==")).split("/");
-                if ("pro" === (e = s[0]) && (e = "premium"), Object(i.a)(e)("setup") || (e = "invalid"), s.length > 2) {
-                    n = s[1];
-                    var l = parseInt(s[2]);
-                    l > 0 && (c = new Date).setTime(l)
-                }
-            } catch (t) {
-                e = "invalid"
-            }
-            this.edition = function() {
-                return e
-            }, this.token = function() {
-                return n
-            }, this.expiration = function() {
-                return c
-            }, this.duration = function() {
-                return c ? c.getTime() - (new Date).getTime() : 0
-            }, this.error = function() {
-                var r;
-                return void 0 === t ? r = 100011 : "invalid" !== e && n ? this.duration() < 0 && (r = a) : r = 100012, r ? new u.q(u.k, r) : null
-            }
         }
     },
     function(t, e, n) {
@@ -2664,7 +2674,7 @@ window.jwplayer = function(t) {
         n.d(e, "a", (function() {
             return r
         }));
-        var r = "8.21.2+commercial_v8-21-2.469.commercial.835873b.hlsjs..hlsjsalt..jwplayer.ca08ad9.dai.1f98a0b.freewheel.1f60863.googima.1281534.googimanvmp.106f6b4.headerbidding.bae6b39.vast.5594430.analytics.920ae01.gapro.141397a"
+        var r = "8.22.1+commercial_v8-22-1.473.commercial.022aa07.hlsjs..hlsjsalt..jwplayer.ba22ed4.dai.1f98a0b.freewheel.f487dc8.googima.1281534.googimanvmp.106f6b4.headerbidding.bae6b39.vast.5594430.analytics.920ae01.gapro.141397a"
     },
     function(t, e, n) {
         "use strict";
@@ -2809,6 +2819,8 @@ window.jwplayer = function(t) {
             return g
         })), n.d(e, "b", (function() {
             return k
+        })), n.d(e, "c", (function() {
+            return A
         }));
         var r = n(5),
             i = n(3),
@@ -2884,12 +2896,8 @@ window.jwplayer = function(t) {
                     u = function(e) {
                         clearTimeout(s), t.el && (x(t), P(t, "window"), t.dragged && (t.dragged = !1, T(t, i.t, e)))
                     };
-                w(t, "init"), A(t, "init", (function(i) {
-                    if (Object(a.o)(e, "jw-tab-focus"), ! function(t) {
-                        if ("which" in t) return 3 === t.which;
-                        if ("button" in t) return 2 === t.button;
-                        return !1
-                    }(i)) {
+                w(t, "init"), _(t, "init", (function(i) {
+                    if (Object(a.p)(e, "jw-tab-focus"), !A(i)) {
                         var c = i.target,
                             s = i.type;
                         if (!t.directSelect || c === e) {
@@ -2912,11 +2920,11 @@ window.jwplayer = function(t) {
         function j(t) {
             if (!t.handlers.select) {
                 var e = t.el;
-                w(t, "select"), A(t, "select", (function(n) {
+                w(t, "select"), _(t, "select", (function(n) {
                     var r = n.target;
-                    t.directSelect && r !== e || (n.isPrimary && "BUTTON" === r.tageName && r.focus(), t.lastStart = Object(u.a)(), t.clicking = !0)
+                    A(n) || t.directSelect && r !== e || (n.isPrimary && "BUTTON" === r.tageName && r.focus(), t.lastStart = Object(u.a)(), t.clicking = !0)
                 })), C(t, "select", "click", (function(n) {
-                    t.directSelect && n.target !== e || (Object(u.a)() - t.lastStart > 500 && !0 === t.clicking || (function(t, e) {
+                    A(n) || t.directSelect && n.target !== e || (Object(u.a)() - t.lastStart > 500 && !0 === t.clicking || (function(t, e) {
                         t.enableDoubleClick && (Object(u.a)() - t.lastClick < 300 ? (T(t, i.r, e), t.lastClick = 0) : t.lastClick = Object(u.a)())
                     }(t, n), T(t, i.o, n)), t.clicking = !1)
                 }))
@@ -2927,9 +2935,9 @@ window.jwplayer = function(t) {
             if (!t.handlers.init && !t.handlers.select) {
                 var n = t.el;
                 C(t, e, "blur", (function() {
-                    Object(a.o)(n, "jw-tab-focus"), t.clicking = !1
+                    Object(a.p)(n, "jw-tab-focus"), t.clicking = !1
                 })), C(t, e, "focus", (function() {
-                    l.event && "keydown" === l.event.type && Object(a.a)(n, "jw-tab-focus")
+                    l.event && "keydown" === l.event.type && Object(a.b)(n, "jw-tab-focus")
                 }))
             }
         }
@@ -3093,7 +3101,11 @@ window.jwplayer = function(t) {
             return 0 === t.type.indexOf("touch") ? (t.originalEvent || t).changedTouches[0] : t
         }
 
-        function A(t, e, n, r) {
+        function A(t) {
+            return !(!t.ctrlKey || "click" !== t.type) || ("which" in t ? 3 === t.which : "button" in t && 2 === t.button)
+        }
+
+        function _(t, e, n, r) {
             d ? C(t, e, "pointerdown", n, r) : (p && C(t, e, "mousedown", n, r), C(t, e, "touchstart", n, r))
         }
     },
@@ -3147,19 +3159,19 @@ window.jwplayer = function(t) {
             g = n(47),
             m = n(53);
         var b = Object(r.j)({}, u, o, i, {
-            addClass: d.a,
-            hasClass: d.i,
-            removeClass: d.o,
-            replaceClass: d.p,
-            toggleClass: d.v,
-            classList: d.d,
-            styleDimension: d.u,
-            createElement: d.e,
-            emptyElement: d.h,
-            addStyleSheet: d.b,
-            bounds: d.c,
-            openLink: d.l,
-            replaceInnerHtml: d.q,
+            addClass: d.b,
+            hasClass: d.j,
+            removeClass: d.p,
+            replaceClass: d.q,
+            toggleClass: d.w,
+            classList: d.e,
+            styleDimension: d.v,
+            createElement: d.f,
+            emptyElement: d.i,
+            addStyleSheet: d.c,
+            bounds: d.d,
+            openLink: d.m,
+            replaceInnerHtml: d.r,
             css: p.b,
             clearCss: p.a,
             style: p.d,
@@ -3315,12 +3327,12 @@ window.jwplayer = function(t) {
 
         function a() {
             return o || (o = i.OS.tizenApp ? n.e(3).then(function(t) {
-                var e = n(72).default;
+                var e = n(73).default;
                 return u.controls = e, e
             }.bind(null, n)).catch((function() {
                 o = null, Object(r.c)(301133)()
             })) : n.e(2).then(function(t) {
-                var e = n(69).default;
+                var e = n(70).default;
                 return u.controls = e, e
             }.bind(null, n)).catch((function() {
                 o = null, Object(r.c)(301130)()
@@ -3545,28 +3557,28 @@ window.jwplayer = function(t) {
             a = n(8),
             c = {
                 html5: function() {
-                    return n.e(15).then(function(t) {
-                        var e = n(168).default;
+                    return n.e(16).then(function(t) {
+                        var e = n(294).default;
                         return Object(u.a)(e), e
                     }.bind(null, n)).catch(Object(a.b)(152))
                 }
             };
         Object(r.j)(c, {
             shaka: function() {
-                return n.e(16).then(function(t) {
-                    var e = n(182).default;
+                return n.e(17).then(function(t) {
+                    var e = n(312).default;
                     return Object(u.a)(e), e
                 }.bind(null, n)).catch(Object(a.b)(154))
             },
             hlsjs: function() {
-                return n.e(13).then(function(t) {
-                    var e = n(177).default;
+                return n.e(14).then(function(t) {
+                    var e = n(308).default;
                     return Object(u.a)(e), e
                 }.bind(null, n)).catch(Object(a.b)(153))
             },
             hlsjsAlt: function() {
-                return n.e(14).then(function(t) {
-                    var e = n(178).default;
+                return n.e(15).then(function(t) {
+                    var e = n(309).default;
                     return Object(u.a)(e), e
                 }.bind(null, n)).catch(Object(a.b)(155))
             }
@@ -3624,7 +3636,7 @@ window.jwplayer = function(t) {
                 }(t.get("id"), n, t.get("localization").errors.errorCode, o.toString()),
                 a = t.get("width"),
                 c = t.get("height"),
-                s = Object(r.e)(u);
+                s = Object(r.f)(u);
             return Object(i.d)(s, {
                 width: a.toString().indexOf("%") > 0 ? a : a + "px",
                 height: c.toString().indexOf("%") > 0 ? c : c + "px"
@@ -3896,6 +3908,7 @@ window.jwplayer = function(t) {
                     pauseAds: !1
                 },
                 autostart: !1,
+                allowFullscreen: !0,
                 bandwidthEstimate: null,
                 bitrateSelection: null,
                 castAvailable: !1,
@@ -4108,7 +4121,7 @@ window.jwplayer = function(t) {
                 availableProviders: g.a,
                 registerProvider: m.a
             },
-            y = n(25);
+            y = n(26);
         b.registerPlugin = function(t, e, n) {
             "jwpsrv" !== t && Object(y.b)(t, e, n)
         };
@@ -4206,15 +4219,16 @@ window.jwplayer = function(t) {
                     return i.clear("ready"), i.tick("setup"), u && _(this, u), (u = A(this, t)).init(e, this), this.on(e.events, null, this)
                 },
                 remove: function() {
-                    return function(t) {
-                        for (var e = v.a.length; e--;)
-                            if (v.a[e].uniqueId === t.uniqueId) {
-                                v.a.splice(e, 1);
-                                break
-                            }
-                    }(this), u && _(this, u), Object.keys(o).forEach((function(t) {
-                        delete o[t]
-                    })), this
+                    return this.getPip() && this.setPip(!1),
+                        function(t) {
+                            for (var e = v.a.length; e--;)
+                                if (v.a[e].uniqueId === t.uniqueId) {
+                                    v.a.splice(e, 1);
+                                    break
+                                }
+                        }(this), u && _(this, u), Object.keys(o).forEach((function(t) {
+                            delete o[t]
+                        })), this
                 },
                 qoe: function() {
                     var t = u.getItemQoe();
@@ -4352,6 +4366,9 @@ window.jwplayer = function(t) {
                 },
                 setFullscreen: function(t) {
                     return u.setFullscreen(t), this
+                },
+                setAllowFullscreen: function(t) {
+                    return u.setAllowFullscreen(t), this
                 },
                 setMute: function(t) {
                     return u.setMute(t), this
@@ -4535,7 +4552,7 @@ window.jwplayer = function(t) {
         L(I);
         var N = I,
             R = n(34),
-            D = n(26),
+            D = n(25),
             B = n(24),
             q = n(48),
             z = n(46),
@@ -5153,247 +5170,125 @@ window.jwplayer = function(t) {
         "use strict";
         var r = n(0),
             i = n(55),
-            o = n(50),
-            u = n(21),
-            a = n(10),
-            c = n(51),
-            s = n(26),
-            l = n(20);
-
-        function f(t, e) {
-            var n = t.querySelector(e);
-            if (n) return n.getAttribute("content")
-        }
-        var d = n(67),
-            p = n.n(d),
-            h = n(66);
+            o = n(67),
+            u = n(8),
+            a = n(28),
+            c = n(23),
+            s = n(16),
+            l = n(17),
+            f = n(39),
+            d = n(1),
+            p = n(5),
+            h = null;
 
         function v(t) {
-            return "string" == typeof t && /^\/\/(?:content\.jwplatform|cdn\.jwplayer)\.com\//.test(t)
-        }
-
-        function g(t) {
-            return "https:" + t
-        }
-
-        function m(t, e) {
-            // var n = "file:" === window.location.protocol ? "https:" : "",
-			var n = "",
-                r = {
-                    // bidding: "//ssl.p.jwpcdn.com/player/v/8.21.2/bidding.js",
-                    // jwpsrv: "//ssl.p.jwpcdn.com/player/v/8.21.2/jwpsrv.js",
-                    // dai: "//ssl.p.jwpcdn.com/player/plugins/dai/v/0.5.3/dai.js",
-                    // vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.5/vast.js",
-                    // googima: e ? "//ssl.p.jwpcdn.com/player/v/8.21.2/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.9.0/googima.js",
-                    // freewheel: "//ssl.p.jwpcdn.com/player/plugins/freewheel/v/2.2.13/freewheel.js",
-                    // gapro: "//ssl.p.jwpcdn.com/player/plugins/gapro/v/2.1.5/gapro.js"
-                }[t];
-            return r ? n + r : ""
-        }
-
-        function b(t, e, n) {
-            e && (t[e.client || m(n)] = e, delete e.client)
-        }
-        var y = function(t, e) {
-                var i, d, y, j = Object(o.b)(t, e),
-                    w = j.key || c.default.key,
-                    O = new s.b(w),
-                    k = O.edition();
-                if ("free" === O.edition() && (j = Object(r.j)({
-                    skin: {
-                        active: "#ff0046",
-                        timeslider: {
-                            progress: "none"
-                        }
-                    },
-                    logo: {
-                        position: "control-bar",
-                        file: p.a
-                    }
-                }, o.a, Object(r.C)(j, ["analytics", "aspectratio", "base", "file", "height", "playlist", "sources", "width"]))), j.key = w, j.edition = k, j.error = O.error(), j.generateSEOMetadata = j.generateSEOMetadata || !1, "unlimited" === k) {
-                    var C = Object(u.getScriptPath)("jwplayer.js");
-                    if (!C) throw new Error("Error setting up player: Could not locate jwplayer.js script tag");
-                    n.p = C
-                }
-                if (j.related = function(t) {
-                    var e = Object(l.a)(t.edition),
-                        n = t.related,
-                        i = !e("discovery") || n !== Object(n),
-                        o = !n || "none" !== n.displayMode,
-                        u = n || {},
-                        a = void 0 === u.oncomplete ? "none" : u.oncomplete,
-                        c = u.autoplaytimer;
-                    !1 === a || t.repeat ? a = "hide" : "none" === a && (c = 0);
-                    var s = "autoplay" === a && c <= 0 || "none" === a;
-                    return Object(r.j)({}, n, {
-                        disableRelated: i,
-                        showButton: o,
-                        oncomplete: a,
-                        autoplaytimer: c,
-                        shouldAutoAdvance: s
-                    })
-                }(j), j.ab && (j.ab = function(t) {
-                    var e = t.ab;
-                    e.clone && (e = e.clone());
-                    return Object.keys(e.tests).forEach((function(n) {
-                        e.tests[n].forEach((function(e) {
-                            e.addConfig && e.addConfig(t, e.selection)
-                        }))
-                    })), e
-                }(j)), j.plugins = function(t) {
-                    var e = Object(r.j)({}, t.plugins),
-                        n = Object(l.a)(t.edition);
-                    if (n("ads")) {
-                        var i = Object(r.j)({}, t.advertising),
-                            o = i.client;
-                        if (o) {
-                            var u = m(o, t.__ab_jwIMA) || o;
-                            e[u] = i, delete i.client
-                        }
-                        i.bids && b(e, i.bids, "bidding")
-                    }
-                    if (n("jwpsrv")) {
-                        var a = t.analytics;
-                        a !== Object(a) && (a = {}), b(e, a, "jwpsrv")
-                    }
-                    return b(e, t.ga, "gapro"), e
-                }(j), i = j.playlist, Object(r.x)(i) && i.indexOf("__CONTEXTUAL__") > -1 && (j.playlist = function(t, e) {
-                    var n = (t.querySelector("title") || {}).textContent,
-                        r = f(t, 'meta[property="og:title"]'),
-                        i = encodeURIComponent(r || n || ""),
-                        o = f(t, 'meta[property="og:description"]') || f(t, 'meta[name="description"]');
-                    return o && (i += "&page_description=" + encodeURIComponent(o)), e.replace("__CONTEXTUAL__", i)
-                }(document, j.playlist), j.contextual = !0), Object(a.isFileProtocol)()) {
-                    var P = j,
-                        x = P.playlist,
-                        S = P.related;
-                    v(x) && (j.playlist = g(x)), S && v(S.file) && (S.file = g(S.file))
-                }
-                return j.__abSendDomainToFeeds && (y = j.playlist, /\.jwplatform.com|\.jwplayer.com/.test(y)) && (j.playlist = (d = j.playlist, d += (-1 !== d.indexOf("?") ? "&" : "?") + "page_domain=" + encodeURIComponent(Object(h.a)()))), j
-            },
-            j = n(8),
-            w = n(28),
-            O = n(23),
-            k = n(16),
-            C = n(17),
-            P = n(39),
-            x = n(1),
-            S = n(5),
-            T = null;
-
-        function E(t) {
-            return T || (T = function(t) {
+            return h || (h = function(t) {
                 var e = t.get("controls"),
-                    r = A(),
+                    r = g(),
                     i = function(t, e) {
                         var n = t.get("playlist");
                         if (Array.isArray(n) && n.length)
-                            for (var r = Object(O.f)(t.get("item"), n.length), i = Object(O.c)(Object(w.a)(n[r]), t), o = 0; o < i.length; o++)
-                                for (var u = i[o], a = t.getProviders(), c = 0; c < k.a.length; c++) {
-                                    var s = k.a[c];
-                                    if (a.providerSupports(s, u)) return s.name === e
+                            for (var r = Object(c.f)(t.get("item"), n.length), i = Object(c.c)(Object(a.a)(n[r]), t), o = 0; o < i.length; o++)
+                                for (var u = i[o], l = t.getProviders(), f = 0; f < s.a.length; f++) {
+                                    var d = s.a[f];
+                                    if (l.providerSupports(d, u)) return d.name === e
                                 }
                         return !1
                     }(t, "html5");
-                if (S.OS.tizen) return _();
+                if (p.OS.tizen) return m();
                 if (e && r && i) return o = n.e(8).then(function(t) {
-                    n(164);
-                    var e = n(71).default;
-                    return P.a.controls = n(69).default, Object(C.a)(n(168).default), e
-                }.bind(null, n)).catch(Object(j.b)(x.s + 105)), j.a.html5 = o, o;
+                    n(167);
+                    var e = n(72).default;
+                    return f.a.controls = n(70).default, Object(l.a)(n(294).default), e
+                }.bind(null, n)).catch(Object(u.b)(d.s + 105)), u.a.html5 = o, o;
                 var o;
                 if (e && i) return function() {
                     var t = n.e(6).then(function(t) {
-                        var e = n(71).default;
-                        return P.a.controls = n(69).default, Object(C.a)(n(168).default), e
-                    }.bind(null, n)).catch(Object(j.b)(x.s + 104));
-                    return j.a.html5 = t, t
+                        var e = n(72).default;
+                        return f.a.controls = n(70).default, Object(l.a)(n(294).default), e
+                    }.bind(null, n)).catch(Object(u.b)(d.s + 104));
+                    return u.a.html5 = t, t
                 }();
                 if (e && r) return n.e(7).then(function(t) {
-                    n(164);
-                    var e = n(71).default;
-                    return P.a.controls = n(69).default, e
-                }.bind(null, n)).catch(Object(j.b)(x.s + 103));
+                    n(167);
+                    var e = n(72).default;
+                    return f.a.controls = n(70).default, e
+                }.bind(null, n)).catch(Object(u.b)(d.s + 103));
                 if (e) return n.e(5).then(function(t) {
-                    var e = n(71).default;
-                    return P.a.controls = n(69).default, e
-                }.bind(null, n)).catch(Object(j.b)(x.s + 102));
-                return _()
-            }(t)), T
+                    var e = n(72).default;
+                    return f.a.controls = n(70).default, e
+                }.bind(null, n)).catch(Object(u.b)(d.s + 102));
+                return m()
+            }(t)), h
         }
 
-        function A() {
+        function g() {
             var t = window.IntersectionObserverEntry;
             return !t || !("IntersectionObserver" in window) || !("intersectionRatio" in t.prototype)
         }
 
-        function _() {
+        function m() {
             return function() {
-                if (A()) return n.e(9).then(function(t) {
-                    return n(164)
-                }.bind(null, n)).catch(Object(j.b)(x.s + 120));
+                if (g()) return n.e(10).then(function(t) {
+                    return n(167)
+                }.bind(null, n)).catch(Object(u.b)(d.s + 120));
                 return Promise.resolve()
-            }().then(j.d)
+            }().then(u.d)
         }
-        var F = n(25),
-            I = n(3),
-            M = n(59),
-            L = n(24),
-            N = n(13);
+        var b = n(3),
+            y = n(59),
+            j = n(24),
+            w = n(13),
+            O = n(26);
 
-        function R(t) {
+        function k(t) {
             var e = t.get("playlist");
             return new Promise((function(n, r) {
                 if ("string" != typeof e) {
                     var i = t.get("feedData") || {};
-                    return D(t, e, i), n()
+                    return C(t, e, i), n()
                 }
-                var o = new M.a;
-                o.on(I.eb, (function(e) {
+                var o = new y.a;
+                o.on(b.eb, (function(e) {
                     var r = e.playlist;
-                    delete e.playlist, D(t, r, e), n()
-                })), o.on(I.w, (function(e) {
-                    D(t, [], {}), r(Object(x.y)(e, x.t))
+                    delete e.playlist, C(t, r, e), n()
+                })), o.on(b.w, (function(e) {
+                    C(t, [], {}), r(Object(d.y)(e, d.t))
                 })), o.load(e)
             }))
         }
 
-        function D(t, e, n) {
+        function C(t, e, n) {
             var r = t.attributes;
-            r.playlist = Object(O.a)(e), r.feedData = n
+            r.playlist = Object(c.a)(e), r.feedData = n
         }
 
-        function B(t) {
+        function P(t) {
             return t.attributes._destroyed
         }
-        var q = n(37),
-            z = function(t, e) {
-                return /isAMP/.test(document.location.search) ? n.e(1).then(function(r) {
-                    var i = new(0, n(179).default)(e);
-                    return t.attributes.ampController = i, Promise.resolve()
-                }.bind(null, n)).catch(Object(j.b)(x.s + 130)) : Promise.resolve()
-            };
+        var x = n(37),
+            S = n(25);
 
-        function V(t) {
-            return Q(t) ? Promise.resolve() : R(t).then((function() {
-                if (t.get("drm") || Object(q.b)(t.get("playlist"))) return Object(q.d)(t.get("edition"))
+        function T(t) {
+            return F(t) ? Promise.resolve() : k(t).then((function() {
+                if (t.get("drm") || Object(x.b)(t.get("playlist"))) return Object(x.d)(t.get("edition"))
             })).then((function() {
-                return R(e = t).then((function() {
-                    if (!B(e)) {
-                        var t = Object(O.b)(e.get("playlist"), e);
+                return k(e = t).then((function() {
+                    if (!P(e)) {
+                        var t = Object(c.b)(e.get("playlist"), e);
                         e.attributes.playlist = t;
                         try {
-                            Object(O.e)(t)
+                            Object(c.e)(t)
                         } catch (t) {
-                            throw t.code += x.t, t
+                            throw t.code += d.t, t
                         }
                         var n = e.getProviders(),
-                            r = Object(O.f)(e.get("item"), t.length),
+                            r = Object(c.f)(e.get("item"), t.length),
                             i = n.choose(t[r].sources[0]),
                             o = i.provider,
-                            u = i.name;
-                        return "function" == typeof o ? o : j.a.html5 && "html5" === u ? j.a.html5 : n.load(u).catch((function(t) {
-                            throw Object(x.y)(t, x.u)
+                            a = i.name;
+                        return "function" == typeof o ? o : u.a.html5 && "html5" === a ? u.a.html5 : n.load(a).catch((function(t) {
+                            throw Object(d.y)(t, d.u)
                         }))
                     }
                 }));
@@ -5401,71 +5296,88 @@ window.jwplayer = function(t) {
             }))
         }
 
-        function H(t, e) {
-            var n = [U(t), z(t, e)];
-            return Q(t) || n.push(Promise.resolve()), Promise.all(n)
+        function E(t, e) {
+            var n = [_(t)];
+            return F(t) || n.push(Promise.resolve()), Promise.all(n)
         }
 
-        function U(t) {
+        function A(t, e) {
+            var r = function() {
+                return function(t, e) {
+                    return Object(O.a)(t, e)
+                }(t, e)
+            };
+            return window.location !== window.parent.location && /isAMP/.test(document.location.search) ? function(t, e) {
+                return function(t, e) {
+                    return n.e(1).then(function(r) {
+                        return new(0, n(315).default)(e).setup(t)
+                    }.bind(null, n)).catch(Object(u.b)(d.s + 130))
+                }(t, e).then((function() {
+                    return I(t)
+                }))
+            }(t, e).then(r).catch(r) : r()
+        }
+
+        function _(t) {
             var e = t.attributes,
                 n = e.error;
-            if (n && n.code === s.a) {
+            if (n && n.code === S.a) {
                 var r = e.pid,
                     i = e.ph,
-                    o = new s.b(e.key);
-                if (i > 0 && i < 4 && r && o.duration() > -7776e6) return new L.a("//content.jwplatform.com/libraries/" + r + ".js").load().then((function() {
+                    o = new S.b(e.key);
+                if (i > 0 && i < 4 && r && o.duration() > -7776e6) return new j.a("//content.jwplatform.com/libraries/" + r + ".js").load().then((function() {
                     var t = window.jwplayer.defaults.key,
-                        n = new s.b(t);
+                        n = new S.b(t);
                     n.error() || n.token() !== o.token() || (e.key = t, e.edition = n.edition(), e.error = n.error())
                 })).catch((function() {}))
             }
             return Promise.resolve()
         }
 
-        function Q(t) {
+        function F(t) {
             var e = t.get("advertising");
             return !(!e || !e.outstream)
         }
-        var W = function(t) {
+        var I = function(t) {
                 var e = t.get("skin") ? t.get("skin").url : void 0;
                 if ("string" == typeof e && ! function(t) {
                     for (var e = document.styleSheets, n = 0, r = e.length; n < r; n++)
                         if (e[n].href === t) return !0;
                     return !1
                 }(e)) {
-                    return new L.a(e, !0).load().catch((function(t) {
+                    return new j.a(e, !0).load().catch((function(t) {
                         return t
                     }))
                 }
                 return Promise.resolve()
             },
-            X = function(t) {
+            M = function(t) {
                 var e = t.attributes,
                     n = e.language,
                     r = e.base,
                     i = e.setupConfig,
                     o = e.intl,
-                    u = Object(N.c)(i, o, n);
-                return !Object(N.h)(n) || Object(N.f)(u) ? Promise.resolve() : new Promise((function(i) {
-                    return Object(N.i)(r, n).then((function(n) {
+                    u = Object(w.c)(i, o, n);
+                return !Object(w.h)(n) || Object(w.f)(u) ? Promise.resolve() : new Promise((function(i) {
+                    return Object(w.i)(r, n).then((function(n) {
                         var r = n.response;
-                        if (!B(t)) {
-                            if (!r) throw new x.q(null, x.h);
-                            e.localization = Object(N.a)(r, u), i()
+                        if (!P(t)) {
+                            if (!r) throw new d.q(null, d.h);
+                            e.localization = Object(w.a)(r, u), i()
                         }
                     })).catch((function(t) {
-                        i(t.code === x.h ? t : Object(x.y)(t, x.g))
+                        i(t.code === d.h ? t : Object(d.y)(t, d.g))
                     }))
                 }))
             };
-        var Y = function(t) {
+        var L = function(t) {
                 var e;
                 this.start = function(n) {
-                    var r = Object(F.a)(t, n),
-                        i = Promise.all([E(t), r, V(t), H(t, n), W(t), X(t)]),
+                    var r = A(t, n),
+                        i = Promise.all([v(t), r, T(t), E(t), I(t), M(t)]),
                         o = new Promise((function(t, n) {
                             e = setTimeout((function() {
-                                n(new x.q(x.k, x.w))
+                                n(new d.q(d.k, d.w))
                             }), 6e4);
                             var r = function() {
                                 clearTimeout(e), setTimeout(t, 6e4)
@@ -5498,17 +5410,17 @@ window.jwplayer = function(t) {
                     clearTimeout(e), t.set("_destroyed", !0), t = null
                 }
             },
-            $ = n(42),
-            J = n(30),
-            K = n(12),
-            Z = n(15),
-            G = {
+            N = n(42),
+            R = n(30),
+            D = n(12),
+            B = n(15),
+            q = {
                 removeItem: function(t) {}
             };
         try {
-            G = window.localStorage || G
+            q = window.localStorage || q
         } catch (t) {}
-        var tt = function() {
+        var z = function() {
                 function t(t, e) {
                     this.namespace = t, this.items = e
                 }
@@ -5516,95 +5428,95 @@ window.jwplayer = function(t) {
                 return e.getAllItems = function() {
                     var t = this;
                     return this.items.reduce((function(e, n) {
-                        var r = G[t.namespace + "." + n];
-                        return r && (e[n] = "captions" !== n ? Object(K.serialize)(r) : JSON.parse(r)), e
+                        var r = q[t.namespace + "." + n];
+                        return r && (e[n] = "captions" !== n ? Object(D.serialize)(r) : JSON.parse(r)), e
                     }), {})
                 }, e.track = function(t) {
                     var e = this;
                     this.items.forEach((function(n) {
                         t.on("change:" + n, (function(t, r) {
                             try {
-                                "captions" === n && (r = JSON.stringify(r)), G[e.namespace + "." + n] = r
+                                "captions" === n && (r = JSON.stringify(r)), q[e.namespace + "." + n] = r
                             } catch (t) {
-                                Z.a.debug && console.error(t)
+                                B.a.debug && console.error(t)
                             }
                         }))
                     }))
                 }, e.clear = function() {
                     var t = this;
                     this.items.forEach((function(e) {
-                        G.removeItem(t.namespace + "." + e)
+                        q.removeItem(t.namespace + "." + e)
                     }))
                 }, t
             }(),
-            et = n(54),
-            nt = n(35),
-            rt = n(9),
-            it = n(43),
-            ot = n(60),
-            ut = n(61),
-            at = n(34);
-        n(68), n(70);
+            V = n(54),
+            H = n(35),
+            U = n(9),
+            Q = n(43),
+            W = n(60),
+            X = n(61),
+            Y = n(34);
+        n(69), n(71);
         n.d(e, "b", (function() {
-            return ft
+            return Z
         }));
-        var ct = function(t) {
-            this._events = {}, this.modelShim = new et.a, this.modelShim._qoeItem = new J.a, this.mediaShim = {}, this.setup = new Y(this.modelShim), this.currentContainer = this.originalContainer = t, this.apiQueue = new i.a(this, ["load", "play", "pause", "seek", "stop", "playlistItem", "playlistNext", "playlistPrev", "next", "preload", "setConfig", "setCurrentAudioTrack", "setCurrentCaptions", "setCurrentQuality", "setFullscreen", "setPip", "requestPip", "addButton", "removeButton", "castToggle", "setMute", "setVolume", "setPlaybackRate", "addCues", "setCues", "setPlaylistItem", "stopCasting", "resize", "setCaptions", "setControls"], (function() {
+        var $ = function(t) {
+            this._events = {}, this.modelShim = new V.a, this.modelShim._qoeItem = new R.a, this.mediaShim = {}, this.setup = new L(this.modelShim), this.currentContainer = this.originalContainer = t, this.apiQueue = new i.a(this, ["load", "play", "pause", "seek", "stop", "playlistItem", "playlistNext", "playlistPrev", "next", "preload", "setAllowFullscreen", "setConfig", "setCurrentAudioTrack", "setCurrentCaptions", "setCurrentQuality", "setFullscreen", "setPip", "requestPip", "addButton", "removeButton", "castToggle", "setMute", "setVolume", "setPlaybackRate", "addCues", "setCues", "setPlaylistItem", "stopCasting", "resize", "setCaptions", "setControls"], (function() {
                 return !0
             }))
         };
 
-        function st(t, e) {
-            e && e.code && (e.sourceError && console.error(e.sourceError), console.error(x.q.logMessage(e.code)))
+        function J(t, e) {
+            e && e.code && (e.sourceError && console.error(e.sourceError), console.error(d.q.logMessage(e.code)))
         }
 
-        function lt(t) {
-            t && t.code && console.warn(x.q.logMessage(t.code))
+        function K(t) {
+            t && t.code && console.warn(d.q.logMessage(t.code))
         }
 
-        function ft(t, e) {
+        function Z(t, e) {
             if (!document.body.contains(t.currentContainer)) {
                 var n = document.getElementById(t.get("id"));
                 n && (t.currentContainer = n)
             }
             t.currentContainer.parentElement && t.currentContainer.parentElement.replaceChild(e, t.currentContainer), t.currentContainer = e
         }
-        Object(r.j)(ct.prototype, {
-            on: rt.a.on,
-            once: rt.a.once,
-            off: rt.a.off,
-            trigger: rt.a.trigger,
+        Object(r.j)($.prototype, {
+            on: U.a.on,
+            once: U.a.once,
+            off: U.a.off,
+            trigger: U.a.trigger,
             init: function(t, e) {
                 var n = this,
                     i = this.modelShim,
-                    o = new tt("jwplayer", ["volume", "mute", "captionLabel", "captions", "bandwidthEstimate", "bitrateSelection", "qualityLabel", "enableShortcuts"]),
-                    u = o && o.getAllItems();
-                i.attributes = i.attributes || {}, Object(r.j)(this.mediaShim, nt.c);
-                var a = t,
-                    c = y(Object(r.j)({}, t), u);
-                c.id = e.id, c.setupConfig = a, Object(r.j)(i.attributes, c, nt.d), i.getProviders = function() {
-                    return new $.a(c)
+                    u = new z("jwplayer", ["volume", "mute", "captionLabel", "captions", "bandwidthEstimate", "bitrateSelection", "qualityLabel", "enableShortcuts"]),
+                    a = u && u.getAllItems();
+                i.attributes = i.attributes || {}, Object(r.j)(this.mediaShim, H.c);
+                var c = t,
+                    s = Object(o.a)(Object(r.j)({}, t), a);
+                s.id = e.id, s.setupConfig = c, Object(r.j)(i.attributes, s, H.d), i.getProviders = function() {
+                    return new N.a(s)
                 }, i.setProvider = function() {};
-                var s = Object(ot.b)();
-                i.get("backgroundLoading") || (s = Object(ut.a)(s.getPrimedElement(), s));
-                var l = this.primeUi = new at.a(Object(at.b)(this.originalContainer)).once("gesture", (function() {
-                    s.prime(), n.preload(), l.destroy()
+                var l = Object(W.b)();
+                i.get("backgroundLoading") || (l = Object(X.a)(l.getPrimedElement(), l));
+                var f = this.primeUi = new Y.a(Object(Y.b)(this.originalContainer)).once("gesture", (function() {
+                    l.prime(), n.preload(), f.destroy()
                 }));
-                return i.on("change:errorEvent", st), this.setup.start(e).then((function(t) {
-                    var u = t.core;
-                    if (!u) throw Object(x.y)(null, x.v);
+                return i.on("change:errorEvent", J), this.setup.start(e).then((function(t) {
+                    var o = t.core;
+                    if (!o) throw Object(d.y)(null, d.v);
                     if (n.setup) {
-                        n.on(I.ub, lt), t.warnings.forEach((function(t) {
-                            n.trigger(I.ub, t)
+                        n.on(b.ub, K), t.warnings.forEach((function(t) {
+                            n.trigger(b.ub, t)
                         }));
                         var a = n.modelShim.clone();
                         if (a.error) throw a.error;
                         var c = n.apiQueue.queue.slice(0);
-                        n.apiQueue.destroy(), Object(r.j)(n, u.prototype), n.playerSetup(a, e, n.originalContainer, n._events, c, s);
-                        var l = n._model;
-                        return i.off("change:errorEvent", st), l.on("change:errorEvent", st), o.track(l), n.updatePlaylist(l.get("playlist"), l.get("feedData")).catch((function(t) {
-                            var e = t.code === x.a ? x.r : x.t;
-                            throw Object(x.y)(t, e)
+                        n.apiQueue.destroy(), Object(r.j)(n, o.prototype), n.playerSetup(a, e, n.originalContainer, n._events, c, l);
+                        var s = n._model;
+                        return i.off("change:errorEvent", J), s.on("change:errorEvent", J), u.track(s), n.updatePlaylist(s.get("playlist"), s.get("feedData")).catch((function(t) {
+                            var e = t.code === d.a ? d.r : d.t;
+                            throw Object(d.y)(t, e)
                         }))
                     }
                 })).then((function() {
@@ -5612,21 +5524,21 @@ window.jwplayer = function(t) {
                 })).catch((function(t) {
                     n.setup && function(t, e, n) {
                         Promise.resolve().then((function() {
-                            var r = Object(x.z)(x.p, x.x, n),
+                            var r = Object(d.z)(d.p, d.x, n),
                                 i = t._model || t.modelShim;
                             r.message = r.message || i.get("localization").errors[r.key], delete r.key;
                             var o = i.get("contextual");
                             if (!o) {
-                                var u = Object(it.a)(t, r);
-                                it.a.cloneIcon && u.querySelector(".jw-icon").appendChild(it.a.cloneIcon("error")), ft(t, u)
+                                var u = Object(Q.a)(t, r);
+                                Q.a.cloneIcon && u.querySelector(".jw-icon").appendChild(Q.a.cloneIcon("error")), Z(t, u)
                             }
-                            i.set("errorEvent", r), i.set("state", I.lb), t.trigger(I.ib, r), o && e.remove()
+                            i.set("errorEvent", r), i.set("state", b.lb), t.trigger(b.ib, r), o && e.remove()
                         }))
                     }(n, e, t)
                 }))
             },
             playerDestroy: function() {
-                this.destroy && this.destroy(), this.apiQueue && this.apiQueue.destroy(), this.setup && this.setup.destroy(), this.primeUi && this.primeUi.destroy(), this.currentContainer !== this.originalContainer && ft(this, this.originalContainer), this.off(), this._events = this._model = this.modelShim = this.apiQueue = this.primeUi = this.setup = null
+                this.destroy && this.destroy(), this.apiQueue && this.apiQueue.destroy(), this.setup && this.setup.destroy(), this.primeUi && this.primeUi.destroy(), this.currentContainer !== this.originalContainer && Z(this, this.originalContainer), this.off(), this._events = this._model = this.modelShim = this.apiQueue = this.primeUi = this.setup = null
             },
             getContainer: function() {
                 return this.currentContainer
@@ -5703,7 +5615,7 @@ window.jwplayer = function(t) {
             attachMedia: function() {},
             detachMedia: function() {}
         });
-        e.a = ct
+        e.a = $
     },
     function(t, e, n) {
         "use strict";
@@ -5732,6 +5644,130 @@ window.jwplayer = function(t) {
         n.d(e, "a", (function() {
             return r
         }))
+    },
+    function(t, e, n) {
+        "use strict";
+        var r = n(0),
+            i = n(50),
+            o = n(21),
+            u = n(10),
+            a = n(51),
+            c = n(25),
+            s = n(20);
+
+        function l(t, e) {
+            var n = t.querySelector(e);
+            if (n) return n.getAttribute("content")
+        }
+        var f = n(68),
+            d = n.n(f),
+            p = n(66);
+        n.d(e, "b", (function() {
+            return b
+        }));
+
+        function h(t) {
+            return "string" == typeof t && /^\/\/(?:content\.jwplatform|cdn\.jwplayer)\.com\//.test(t)
+        }
+
+        function v(t) {
+            return "https:" + t
+        }
+
+        function g(t, e) {
+            //var n = "file:" === window.location.protocol ? "https:" : "",
+			  var n = "",
+                r = {
+                    //bidding: "//ssl.p.jwpcdn.com/player/v/8.22.1/bidding.js",
+                    //jwpsrv: "//ssl.p.jwpcdn.com/player/v/8.22.1/jwpsrv.js",
+                    //dai: "//ssl.p.jwpcdn.com/player/plugins/dai/v/0.5.3/dai.js",
+                    //vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.5/vast.js",
+                    //googima: e ? "//ssl.p.jwpcdn.com/player/v/8.22.1/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.9.0/googima.js",
+                    //freewheel: "//ssl.p.jwpcdn.com/player/plugins/freewheel/v/2.2.15/freewheel.js",
+                    //gapro: "//ssl.p.jwpcdn.com/player/plugins/gapro/v/2.1.5/gapro.js"
+                }[t];
+            return r ? n + r : ""
+        }
+
+        function m(t, e, n) {
+            e && (t[e.client || g(n)] = e, delete e.client)
+        }
+
+        function b(t) {
+            var e = Object(r.j)({}, t.plugins),
+                n = Object(s.a)(t.edition);
+            if (n("ads")) {
+                var i = Object(r.j)({}, t.advertising),
+                    o = i.client;
+                if (o) e[g(o, t.__ab_jwIMA) || o] = i, delete i.client;
+                i.bids && m(e, i.bids, "bidding")
+            }
+            if (n("jwpsrv")) {
+                var u = t.analytics;
+                u !== Object(u) && (u = {}), m(e, u, "jwpsrv")
+            }
+            return m(e, t.ga, "gapro"), e
+        }
+        e.a = function(t, e) {
+            var f, g, m, y = Object(i.b)(t, e),
+                j = y.key || a.default.key,
+                w = new c.b(j),
+                O = w.edition();
+            if ("free" === w.edition() && (y = Object(r.j)({
+                skin: {
+                    active: "#ff0046",
+                    timeslider: {
+                        progress: "none"
+                    }
+                },
+                logo: {
+                    position: "control-bar",
+                    file: d.a
+                }
+            }, i.a, Object(r.C)(y, ["analytics", "aspectratio", "base", "file", "height", "playlist", "sources", "width"]))), y.key = j, y.edition = O, y.error = w.error(), y.generateSEOMetadata = y.generateSEOMetadata || !1, "unlimited" === O) {
+                var k = Object(o.getScriptPath)("jwplayer.js");
+                if (!k) throw new Error("Error setting up player: Could not locate jwplayer.js script tag");
+                n.p = k
+            }
+            if (y.related = function(t) {
+                var e = Object(s.a)(t.edition),
+                    n = t.related,
+                    i = !e("discovery") || n !== Object(n),
+                    o = !n || "none" !== n.displayMode,
+                    u = n || {},
+                    a = void 0 === u.oncomplete ? "none" : u.oncomplete,
+                    c = u.autoplaytimer;
+                !1 === a || t.repeat ? a = "hide" : "none" === a && (c = 0);
+                var l = "autoplay" === a && c <= 0 || "none" === a;
+                return Object(r.j)({}, n, {
+                    disableRelated: i,
+                    showButton: o,
+                    oncomplete: a,
+                    autoplaytimer: c,
+                    shouldAutoAdvance: l
+                })
+            }(y), y.ab && (y.ab = function(t) {
+                var e = t.ab;
+                e.clone && (e = e.clone());
+                return Object.keys(e.tests).forEach((function(n) {
+                    e.tests[n].forEach((function(e) {
+                        e.addConfig && e.addConfig(t, e.selection)
+                    }))
+                })), e
+            }(y)), y.plugins = b(y), f = y.playlist, Object(r.x)(f) && f.indexOf("__CONTEXTUAL__") > -1 && (y.playlist = function(t, e) {
+                var n = (t.querySelector("title") || {}).textContent,
+                    r = l(t, 'meta[property="og:title"]'),
+                    i = encodeURIComponent(r || n || ""),
+                    o = l(t, 'meta[property="og:description"]') || l(t, 'meta[name="description"]');
+                return o && (i += "&page_description=" + encodeURIComponent(o)), e.replace("__CONTEXTUAL__", i)
+            }(document, y.playlist), y.contextual = !0), Object(u.isFileProtocol)()) {
+                var C = y,
+                    P = C.playlist,
+                    x = C.related;
+                h(P) && (y.playlist = v(P)), x && h(x.file) && (x.file = v(x.file))
+            }
+            return y.__abSendDomainToFeeds && (m = y.playlist, /\.jwplatform.com|\.jwplayer.com/.test(m)) && (y.playlist = (g = y.playlist, g += (-1 !== g.indexOf("?") ? "&" : "?") + "page_domain=" + encodeURIComponent(Object(p.a)()))), y
+        }
     },
     function(t, e) {
         t.exports = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 29.3" class="jw-svg-icon jw-svg-icon-watermark" focusable="false"><path d="M37,16.68c0,2.4-.59,3.43-2.4,3.43a5.75,5.75,0,0,1-3.38-1.23v3.58a7.39,7.39,0,0,0,3.67,1c3.67,0,5.73-1.91,5.73-6.32V5.86H37Z"></path><polygon points="58.33 17.61 55.39 6.01 52.55 6.01 49.52 17.61 46.73 6.01 43.06 6.01 47.56 23.29 50.89 23.29 53.92 11.88 56.96 23.29 60.24 23.29 64.74 6.01 61.17 6.01 58.33 17.61"></polygon><path d="M73.84,6H67.47V23.29h2.2v-6.9h4.17c3.47,0,5.77-1.77,5.77-5.19S77.31,6,73.84,6Zm0,8.47H69.72V8h4.12c2.3,0,3.57,1.22,3.62,3.28C77.46,13.21,76.19,14.48,73.84,14.48Z"></path><path d="M99.2,6l-6,15.27H85V6H82.8V23.29H94.7l2-5.19h7.09l2,5.19H108L101.26,6ZM97.39,16.14l2.84-7.39L103,16.14Z"></path><polygon points="113.98 14.18 108.99 6.01 106.59 6.01 112.81 16.14 112.81 23.29 115.01 23.29 115.01 16.14 121.33 6.01 118.98 6.01 113.98 14.18"></polygon><polygon points="123.14 23.29 134.1 23.29 134.1 21.28 125.29 21.28 125.29 15.41 133.32 15.41 133.32 13.45 125.29 13.45 125.29 7.97 134.1 7.97 134.1 6.01 123.14 6.01 123.14 23.29"></polygon><path d="M144.86,15.85c2.74-.39,4.41-2,4.41-4.85,0-3.23-2.26-5-5.73-5h-6.32V23.29h2.22V16h3.08l4.94,7.29H150Zm-5.42-1.71V8h4.06c2.3,0,3.62,1.17,3.62,3.08s-1.32,3.09-3.62,3.09Z"></path><path d="M27.63.09a1,1,0,0,0-1.32.48c-.24.51-6.35,15.3-6.35,15.3-.2.46-.33.41-.33-.07,0,0,0-5.15,0-9.39,0-2.31-1.12-3.61-2.73-3.88A3.12,3.12,0,0,0,14.83,3a4.57,4.57,0,0,0-1.5,1.79c-.48.94-3.47,9.66-3.47,9.66-.16.46-.31.44-.31,0,0,0-.09-3.76-.18-4.64-.13-1.36-.44-3.59-2.2-3.7S4.77,8,4.36,9.24c-.29.84-1.65,5.35-1.65,5.35l-.2.46h0c-.06.24-.17.24-.24,0l-.11-.42Q2,14,1.74,13.31a1.71,1.71,0,0,0-.33-.66.83.83,0,0,0-.88-.22.82.82,0,0,0-.53.69,4.22,4.22,0,0,0,.07.79,29,29,0,0,0,1,4.6,1.31,1.31,0,0,0,1.8.66,3.43,3.43,0,0,0,1.24-1.81c.33-.81,2-5.48,2-5.48.18-.46.31-.44.29,0,0,0-.09,4.57-.09,6.64a13.11,13.11,0,0,0,.28,2.93,2.41,2.41,0,0,0,.82,1.27,2,2,0,0,0,1.41.4,2,2,0,0,0,.7-.24,3.15,3.15,0,0,0,.79-.71,12.52,12.52,0,0,0,1.26-2.11c.81-1.6,2.92-6.58,2.92-6.58.2-.46.33-.41.33.07,0,0-.26,8.36-.26,11.55a6.39,6.39,0,0,0,.44,2.33,2.8,2.8,0,0,0,1.45,1.61A2.57,2.57,0,0,0,18.79,29a3.76,3.76,0,0,0,1.28-1.32,15.12,15.12,0,0,0,1.07-2.31c.64-1.65,1.17-3.33,1.7-5s5-17.65,5.28-19a1.79,1.79,0,0,0,0-.46A1,1,0,0,0,27.63.09Z"></path></svg>'
@@ -5764,7 +5800,7 @@ window.jwplayer = function(t) {
                 var e = t.model;
                 if (!(e.get("audioMode") || e.get("isFloating") || !e.get("controls") || e.get("visibility") < .75)) {
                     var n = e.get("state"),
-                        r = Object(u.f)();
+                        r = Object(u.g)();
                     !r && "paused" === n && t.api.getFullscreen() ? t.api.setFullscreen(!1) : "playing" === n && t.api.setFullscreen(r)
                 }
             }))
@@ -5869,7 +5905,7 @@ window.jwplayer = function(t) {
                         width: "100%",
                         height: "100%"
                     },
-                    l = Object(o.e)('<div style="opacity:0;visibility:hidden;overflow:hidden;"><div><div style="height:1px;"></div></div><div class="jw-contract-trigger"></div></div>'),
+                    l = Object(o.f)('<div style="opacity:0;visibility:hidden;overflow:hidden;"><div><div style="height:1px;"></div></div><div class="jw-contract-trigger"></div></div>'),
                     f = l.firstChild,
                     d = f.firstChild,
                     p = f.nextSibling;
