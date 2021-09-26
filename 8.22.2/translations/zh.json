@@ -25,7 +25,7 @@
         "protectedContent": "无法访问受保护内容。",
         "technicalError": "由于技术故障，无法播放该视频。"
     },
-    "exitFullscreen": "離開全螢幕",
+    "exitFullscreen": "退出全屏",
     "fullscreen": "全屏",
     "hd": "视频质量",
     "liveBroadcast": "直播",
@@ -66,7 +66,7 @@
     "shortcuts": {
         "playPause": "播放/暂停",
         "volumeToggle": "静音/取消静音",
-        "fullscreenToggle": "全屏/離開全螢幕",
+        "fullscreenToggle": "全屏/退出全屏",
         "seekPercent": "跳转至%",
         "keyboardShortcuts": "键盘快捷键",
         "increaseVolume": "增大音量",
