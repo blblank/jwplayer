@@ -1,11 +1,11 @@
 /*!
-   JW Player version 8.22.1
+   JW Player version 8.22.2
    Copyright (c) 2021, JW Player, All Rights Reserved
    This source code and its use and distribution is subject to the terms
    and conditions of the applicable license agreement.
    https://www.jwplayer.com/tos/
    This product includes portions of other software. For the full text of licenses, see
-   https://ssl.p.jwpcdn.com/player/v/8.22.1/notice.txt
+   https://ssl.p.jwpcdn.com/player/v/8.22.2/notice.txt
 */
 window.jwplayer = function(t) {
     function e(e) {
@@ -382,9 +382,10 @@ window.jwplayer = function(t) {
                     a = !1 === n.leading ? 0 : Tt(), u = null, o = t.apply(r, i), r = i = null
                 };
                 return function() {
-                    a || !1 !== n.leading || (a = Tt);
-                    var s = e - (Tt - a);
-                    return r = this, i = arguments, s <= 0 ? (clearTimeout(u), u = null, a = Tt, o = t.apply(r, i), r = i = null) : u || !1 === n.trailing || (u = setTimeout(c, s)), o
+                    var s = Tt();
+                    a || !1 !== n.leading || (a = s);
+                    var l = e - (s - a);
+                    return r = this, i = arguments, l <= 0 ? (clearTimeout(u), u = null, a = s, o = t.apply(r, i), r = i = null) : u || !1 === n.trailing || (u = setTimeout(c, l)), o
                 }
             },
             ot = function(t) {
@@ -1249,7 +1250,7 @@ window.jwplayer = function(t) {
                 return "MacIntel" === navigator.platform && navigator.maxTouchPoints > 1
             },
             o = function() {
-                return r(/gecko\//i)
+                return r(/firefox\//i)
             },
             u = function() {
                 return r(/iP(hone|od)/i)
@@ -1276,13 +1277,13 @@ window.jwplayer = function(t) {
                 return d() && !r(/SamsungBrowser/)
             },
             h = function() {
-                return r(/\s(?:(?:Headless)?Chrome|CriOS)\//i) && !l() && !r(/UCBrowser/i) && !d()
+                return r(/\s(?:(?:Headless)?Chrome|CriOS)\//i) && !l() && !r(/UCBrowser/i)
             },
             v = function() {
                 return !r(/\sEdg\/\d+/i) && (l() || r(/trident\/.+rv:\s*11/i) || f())
             },
             g = function() {
-                return r(/safari/i) && !r(/(?:Chrome|CriOS|chromium|android|phantom)/i) || d()
+                return r(/safari/i) && !r(/(?:Chrome|CriOS|chromium|android|phantom)/i) && !d()
             },
             m = function() {
                 return r(/iP(hone|ad|od)/i) || i()
@@ -1815,6 +1816,8 @@ window.jwplayer = function(t) {
             return s
         })), n.d(e, "timeFormat", (function() {
             return l
+        })), n.d(e, "timeFormatAria", (function() {
+            return f
         }));
         var r = n(10),
             i = n(0);
@@ -1868,6 +1871,14 @@ window.jwplayer = function(t) {
                 o = Math.floor((t - 3600 * r) / 60),
                 u = Math.floor(t % 60);
             return n + (r ? r + ":" : "") + (o < 10 ? "0" : "") + o + ":" + (u < 10 ? "0" : "") + u
+        }
+
+        function f(t) {
+            if (Object(i.u)(t) && (t = parseInt(t.toString())), Object(i.u)(t) || !isFinite(t) || t <= 0) return "0 seconds";
+            var e = Math.floor(t / 3600),
+                n = Math.floor((t - 3600 * e) / 60),
+                r = Math.floor(t % 60);
+            return (e ? e + (e > 1 ? " hours, " : 1 === e ? " hour, " : "") : "") + (n ? n + (n > 1 ? " minutes, " : 1 === n ? " minute, " : "") : "") + r + (1 !== r ? " seconds" : 1 === r ? " second" : "")
         }
     },
     function(t, e, n) {
@@ -2217,7 +2228,7 @@ window.jwplayer = function(t) {
                 return ""
             },
             u = function() {
-                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.22.1/";
+                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.22.2/";
                 return "" + (Object(i.isFileProtocol)() ? "https:" : "") + t
             },
             a = function(t) {
@@ -2674,7 +2685,7 @@ window.jwplayer = function(t) {
         n.d(e, "a", (function() {
             return r
         }));
-        var r = "8.22.1+commercial_v8-22-1.473.commercial.022aa07.hlsjs..hlsjsalt..jwplayer.ba22ed4.dai.1f98a0b.freewheel.f487dc8.googima.1281534.googimanvmp.106f6b4.headerbidding.bae6b39.vast.5594430.analytics.920ae01.gapro.141397a"
+        var r = "8.22.2+commercial_v8-22-2.474.commercial.42503c9.hlsjs..hlsjsalt..jwplayer.cb1ee99.dai.1f98a0b.freewheel.f487dc8.googima.b98d228.googimanvmp.106f6b4.headerbidding.0e6306c.vast.9d030c5.analytics.920ae01.gapro.141397a"
     },
     function(t, e, n) {
         "use strict";
@@ -5676,13 +5687,13 @@ window.jwplayer = function(t) {
 
         function g(t, e) {
             //var n = "file:" === window.location.protocol ? "https:" : "",
-			  var n = "",
+			var n = "",
                 r = {
-                    //bidding: "//ssl.p.jwpcdn.com/player/v/8.22.1/bidding.js",
-                    //jwpsrv: "//ssl.p.jwpcdn.com/player/v/8.22.1/jwpsrv.js",
+                    //bidding: "//ssl.p.jwpcdn.com/player/v/8.22.2/bidding.js",
+                    //jwpsrv: "//ssl.p.jwpcdn.com/player/v/8.22.2/jwpsrv.js",
                     //dai: "//ssl.p.jwpcdn.com/player/plugins/dai/v/0.5.3/dai.js",
-                    //vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.5/vast.js",
-                    //googima: e ? "//ssl.p.jwpcdn.com/player/v/8.22.1/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.9.0/googima.js",
+                    //vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.7/vast.js",
+                    //googima: e ? "//ssl.p.jwpcdn.com/player/v/8.22.2/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.9.1/googima.js",
                     //freewheel: "//ssl.p.jwpcdn.com/player/plugins/freewheel/v/2.2.15/freewheel.js",
                     //gapro: "//ssl.p.jwpcdn.com/player/plugins/gapro/v/2.1.5/gapro.js"
                 }[t];
