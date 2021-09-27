@@ -2228,9 +2228,8 @@ window.jwplayer = function(t) {
                 return ""
             },
             u = function() {
-                var t = "8.22.2/";
-                //return "" + (Object(i.isFileProtocol)() ? "https:" : "") + t
-				return ""  + t
+                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.22.2/";
+                return "" + (Object(i.isFileProtocol)() ? "https:" : "") + t
             },
             a = function(t) {
                 var e = ("0" + t).split(/\W/),
