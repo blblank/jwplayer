@@ -1,11 +1,11 @@
 /*!
-   JW Player version 8.23.1
+   JW Player version 8.23.2
    Copyright (c) 2021, JW Player, All Rights Reserved
    This source code and its use and distribution is subject to the terms
    and conditions of the applicable license agreement.
    https://www.jwplayer.com/tos/
    This product includes portions of other software. For the full text of licenses, see
-   https://ssl.p.jwpcdn.com/player/v/8.23.1/notice.txt
+   https://ssl.p.jwpcdn.com/player/v/8.23.2/notice.txt
 */
 window.jwplayer = function(t) {
     function e(e) {
@@ -1926,7 +1926,8 @@ window.jwplayer = function(t) {
                 id: "Indonesian",
                 ko: "Korean",
                 th: "Thai",
-                vi: "Vietnamese"
+                vi: "Vietnamese",
+                ar: "Arabic"
             },
             l = Object(r.q)(s);
 
@@ -2228,7 +2229,7 @@ window.jwplayer = function(t) {
                 return ""
             },
             u = function() {
-                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.23.1/";
+                var t = "//cdn.jsdelivr.net/gh/blblank/jwplayer/8.23.2/";
                 return "" + (Object(i.isFileProtocol)() ? "https:" : "") + t
             },
             a = function(t) {
@@ -2685,7 +2686,7 @@ window.jwplayer = function(t) {
         n.d(e, "a", (function() {
             return r
         }));
-        var r = "8.23.1+commercial_v8-23-1.476.commercial.1d2aad6.hlsjs..hlsjsalt..jwplayer.e48cc6a.dai.1f98a0b.freewheel.20bc668.googima.b98d228.googimanvmp.106f6b4.headerbidding.ec72a89.vast.9d030c5.analytics.d52963c.analyticskraken.5483d88.gapro.141397a"
+        var r = "8.23.2+commercial_v8-23-2.482.commercial.d0cdc42.hlsjs..hlsjsalt..jwplayer.1fac38c.dai.1f98a0b.freewheel.20bc668.googima.b98d228.googimanvmp.106f6b4.headerbidding.791affa.vast..analytics.d52963c.analyticskraken.b25be6d.gapro.141397a"
     },
     function(t, e, n) {
         "use strict";
@@ -5689,11 +5690,11 @@ window.jwplayer = function(t) {
             //var n = "file:" === window.location.protocol ? "https:" : "",
 			var n = "",
                 r = {
-                    //bidding: "//ssl.p.jwpcdn.com/player/v/8.23.1/bidding.js",
-                    //jwpsrv: "//ssl.p.jwpcdn.com/player/v/8.23.1/jwpsrv.js",
+                    //bidding: "//ssl.p.jwpcdn.com/player/v/8.23.2/bidding.js",
+                    //jwpsrv: "//ssl.p.jwpcdn.com/player/v/8.23.2/jwpsrv.js",
                     //dai: "//ssl.p.jwpcdn.com/player/plugins/dai/v/0.5.3/dai.js",
-                    //vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.7/vast.js",
-                    //googima: e ? "//ssl.p.jwpcdn.com/player/v/8.23.1/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.9.1/googima.js",
+                    //vast: "//ssl.p.jwpcdn.com/player/plugins/vast/v/8.9.8/vast.js",
+                    //googima: e ? "//ssl.p.jwpcdn.com/player/v/8.23.2/googimanvmp.js" : "//ssl.p.jwpcdn.com/player/plugins/googima/v/8.9.1/googima.js",
                     //freewheel: "//ssl.p.jwpcdn.com/player/plugins/freewheel/v/2.2.16/freewheel.js",
                     //gapro: "//ssl.p.jwpcdn.com/player/plugins/gapro/v/2.1.5/gapro.js"
                 }[t];
